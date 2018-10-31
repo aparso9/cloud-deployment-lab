@@ -30,9 +30,9 @@ app.get('/greeting', (request, response) => {
   response.status(200).send(message);
 });
 
-app.get('/todo', async (request, response) => {
+app.get('/todo', e, async (request, response) => {
   try {
-    const todo = await axios.get('https://jsonplaceholder.typicode.com/todos/2')
+    const todo = await axios.get('https://jsonplaceholder.typicode.com/todos/'+e)
       .then(res => res.data);
     response.json(todo);
   } catch (e) {
